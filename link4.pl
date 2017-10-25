@@ -39,6 +39,7 @@ my $hash4 = 0;
 my $wrongInput = 0;
 my $winCondition = "No Contest";
 my $boardFill = 0;
+my $clear = "clear";
 # $board[column][row]
 # r
 #c0|1|2|3|4|5|6|
@@ -47,6 +48,13 @@ my $boardFill = 0;
 # 3
 # 4
 # 5
+my $LINUX = 0;
+if ($^O eq 'linux') { $LINUX = 1;}
+if ($LINUX) {
+    print "It's Linux";
+} else {
+    $clear = "cls";
+}
 sub CheckWin{
     #takes in the $input for x, takes the column count for y
     my @list = @_;
@@ -163,14 +171,14 @@ sub CheckWin{
     }
 
 }
-system("cls");
+system($clear);
 print "LINK 4\n";
 print "Flip a coin IRL :)\n";
 print "Enter anything to continue\n";
 chomp ($input = <>);
 $input = "0";
 while (length($input) != 1 || $input !~ /^[a-zA-Z]+$/ ){
-    system("cls");
+    system($clear);
     $input = "0";
     print "\n";
     print "Player 1 enter a character for your game pieces; 1 character from the alphabet.\n";
@@ -179,7 +187,7 @@ while (length($input) != 1 || $input !~ /^[a-zA-Z]+$/ ){
 $p1 = $input;
 $input = "0";
 while (length($input) != 1 || $input !~ /^[a-zA-Z]+$/){
-    system("cls");
+    system($clear);
     if ($input eq "1"){
         print "er.. that's taken already\n";
     } else {
@@ -196,7 +204,7 @@ $p2 = $input;
 
 
 while (!$gameWin && !$gameEnd) {
-    system("cls");
+    system($clear);
     if (!$firstTime){
         # player switcher
         if ($wrongInput){
@@ -281,14 +289,14 @@ while (!$gameWin && !$gameEnd) {
         } elsif ($input eq "q"){
             # game quit
             while ($input ne "y" && $input ne "n") {
-                system("cls");
+                system($clear);
                 print "You wanna quit? y or n\n";
                 chomp ($input = <>);
             }
             if ($input eq "y"){
                 $gameEnd = 1;
             } else {
-                system("cls");
+                system($clear);
                 print "\n";
                 $wrongInput = 1;
             }
@@ -317,7 +325,7 @@ while (!$gameWin && !$gameEnd) {
         chomp ($input = <>);
     } else {
         # show end result
-        system("cls");
+        system($clear);
         for my $i(0..5){
             for my $j(0..6){
                 print "|".$board[$i][$j];
@@ -326,8 +334,8 @@ while (!$gameWin && !$gameEnd) {
         }
         print "Game Over\n";
         if ($gameWin){
-            print $stamp." wins ";
+            print $stamp." wins \n";
         }
-        print $winCondition;
+        print $winCondition."\n";
     }
 }
