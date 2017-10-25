@@ -14,6 +14,7 @@ use version;         our $VERSION = qv('5.16.0');   # This the version of Perl t
 # +Copyright free hahahahahaha probably not
 
 # 7x6 LINK 4
+START:
 my @board = (['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0'],['0','0','0','0','0','0','0']);
 my $max_rows = 7;
 my $max_columns = 6;
@@ -53,8 +54,10 @@ if ($^O eq 'linux') { $LINUX = 1;}
 if ($LINUX) {
     print "It's Linux";
 } else {
+    print "It's Not Linux";
     $clear = "cls";
 }
+START:
 sub CheckWin{
     #takes in the $input for x, takes the column count for y
     my @list = @_;
@@ -338,4 +341,16 @@ while (!$gameWin && !$gameEnd) {
         }
         print $winCondition."\n";
     }
+}
+print "Play again? y or n\n";
+chomp ($input = <>);
+while (length($input) != 1 || $input !~ /^[ny]+$/){
+    system($clear);
+    $input = "0";
+    print "\n";
+    print "Play again? y or n\n";
+    chomp ($input = <>);
+}
+if ($input eq "y"){
+    goto START;
 }
