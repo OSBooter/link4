@@ -32,9 +32,11 @@ Welcome to the game, type a number to drop a piece to the corresponding
 4. The instructions are at the top the commands and the board is underneath.
 
 The player r dropped their piece in [c3,r1]
+
 ![alt text](https://puu.sh/AV11P/14897ad8ae.png)
 
 5. The previous move is displayed on the top and what piece it was.
+
 ![alt text](https://puu.sh/AV13g/c2c2519115.png)
 
 6. When a player reaches a win condition or the game is forced to end
