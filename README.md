@@ -26,35 +26,16 @@ Player 2 enter a character for your game pieces; 1 character from the alphabet.
 3. Player 2 enters a single character that isn't the Player 1's character.
 
 Welcome to the game, type a number to drop a piece to the corresponding
-^1^2^3^4^5^6^7^
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
+
+![alt text](https://puu.sh/AV0Zw/d3139aca1e.png)
 
 4. The instructions are at the top the commands and the board is underneath.
 
 The player r dropped their piece in [c3,r1]
-^1^2^3^4^5^6^7^
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|r|0|0|0|0|
+![alt text](https://puu.sh/AV11P/14897ad8ae.png)
 
 5. The previous move is displayed on the top and what piece it was.
-
-|0|0|0|0|0|0|0|
-|0|0|0|0|0|0|0|
-|0|0|r|0|0|0|0|
-|0|0|r|0|d|0|0|
-|0|0|r|0|d|0|0|
-|0|0|r|0|d|0|0|
-Game Over
-r wins 4 in a row vertically!
+![alt text](https://puu.sh/AV13g/c2c2519115.png)
 
 6. When a player reaches a win condition or the game is forced to end
 There is a game over and the reason is shown, such as a vertical win!
